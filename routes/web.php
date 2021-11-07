@@ -11,9 +11,21 @@
 |
 */
 
-Route::get('/', function () {
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', function(){
     return view('welcome');
 });
+
+Route::get('/teste', function(){
+    return view('teste');
+});
+
+Route::get('vendas', 'VendasController@vendas')->name('vendas');
+
+
 
 Auth::routes();
 
