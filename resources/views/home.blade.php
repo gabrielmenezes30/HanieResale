@@ -20,69 +20,75 @@
         </div>
     </div>
 </div> -->
+<!-- {{ Auth::user()->name }} -->
+<link href="{{ asset('css/cssviews/home.css') }}" rel="stylesheet">
 
-<div class="container">
-    <div class="d-flex justify-content-between">
-        <div>
-            <h1>Informações pessoais</h1>
+<!-- Link Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+    <div class="container-fluid">
+        <div class="containerTexto">
             <div>
-
+                <h1>Seja bem vindo(a)
+                    <strong>
+                        <!-- Passando o parametro do nome do usuario a view -->
+                        {{ Auth::user()->name }}   
+                    </strong>
+                </h1>
             </div>
         </div>
-        <!-- <div class="teste d-flex flex-column">
-            <div class="btn btn-primary btn-lg">
-                <a class="text-decoration-none text-white" href="">Vendas</a>
+    <hr>
+        <div class="divContainer">
+            <div class="caixaConversa">
+                <div>
+                    <img src="{{asset('assets/images/logo.png')}}" alt="">
+                </div>
+                <div class="caixaBotoes">
+                    <a class="teste" href="/options/doacoes">
+                        <button class="botoes">
+                        <i class="fas fa-hand-holding-usd"></i>
+                         Doações
+                        </button>
+                    </a>
+                    <a class="teste" href="/options/vendas">
+                        <button class="botoes">
+                        <i class="fas fa-coins"></i>
+                            Compras
+                        </button>
+                    </a>
+                </div>
             </div>
-            <div class="btn btn-primary btn-lg mt-3 btn-outline-warning border-0">
-                <a class="text-decoration-none text-secondary" href="">Compras</a>
-            </div>
-        </div> -->
-        <div>
-            <div class="classBotoes">
-                <button class="botao">
-                    <a class="textoBotaoHome" href="">Doações</a>
-                </button>
-            </div>
-            <small class="texto ">Para entrar na Timeline de doações</small>
-            <div>
-                <button class="botao">
-                    <a class="textoBotaoHome" href="">Vendas</a>
-                </button>
-            </div>
-            <small>Para entrar na Timeline de Vendas</small>
         </div>
+
     </div>
-</div>
+
+
+        <!-- <div class="teste">
+            <a href="/options/doacoes">
+                <button class="button m-5">
+                    Doações
+                </button>
+            </a>
+            <a href="/options/vendas">
+                <button class="button ml-5" >
+                    Vendas
+                </button>
+            </a>
+        </div> -->
+
 @endsection
 
 
-<style>
-    .classBotoes{
-        margin-top: 100px
-    }
 
 
-    .botao{
-        width: 450px;
-        height: 80px;
-        background-color: #FF8000;
-        margin-top:100px;
-        border: none;
-        font-size: 30px;
-        border-radius: 5px;
-    
-    }
-    .botao .textoBotaoHome{
-        color: #ffffff;
-        text-decoration: none;
-    }
-    .botao:hover{
-        background-color: #B45F04;
-        transition: ease all 300ms;
 
-    }
-    
-    .teste{
-        margin-top: 300px;
-    }
-</style>
+
+
+
+
+
+
+
+
