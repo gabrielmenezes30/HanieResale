@@ -2,10 +2,10 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="ajuste-container-login">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+            <div class="card cor-card">
+                <div class="card-header">{{ __('Registrar') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
@@ -63,7 +63,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-success">
                                     {{ __('Register') }}
                                 </button>
                             </div>
@@ -75,3 +75,20 @@
     </div>
 </div>
 @endsection
+
+
+<style>
+     body, html{
+        background-color: #6E6E6E !important; 
+    }
+    .cor-card{
+        background-color: #FF8000 !important;
+        color: #ffffff;
+    }
+    .ajuste-container-login{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 80%;
+    }
+</style>

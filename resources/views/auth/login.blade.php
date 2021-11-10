@@ -2,9 +2,9 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="ajuste-container-login">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card cor-card">
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
@@ -53,12 +53,12 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-success">
                                     {{ __('Login') }}
                                 </button>
 
                                 @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                    <a class="btn btn-link botao-forgot" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif
@@ -71,3 +71,26 @@
     </div>
 </div>
 @endsection
+
+
+<style>
+    body, html{
+        background-color: #6E6E6E !important; 
+    }
+    .navbar{
+        background-color: #111111 !important;
+    }
+    .cor-card{
+        background-color: #FF8000 !important;
+        color: #ffffff;
+    }
+    .botao-forgot{
+        color: #000000 !important;
+    }
+    .ajuste-container-login{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 80%;
+    }
+</style>
