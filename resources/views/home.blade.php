@@ -42,9 +42,9 @@
     <hr>
         <div class="divContainer">
             <div class="caixaConversa">
-                <div>
+                {{-- <div>
                     <img src="{{asset('assets/images/logo.png')}}" alt="">
-                </div>
+                </div> --}}
                 <div class="caixaBotoes">
                     <a class="teste" href="/options/doacoes">
                         <button class="botoes">
@@ -63,7 +63,7 @@
         </div>
 
     </div>
-
+    
 
         <!-- <div class="teste">
             <a href="/options/doacoes">

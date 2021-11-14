@@ -3,10 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Doacao;
 
 class DoacoesController extends Controller
 {
     public function doacao(){
-        return view('options.doacoes');
+
+        $doacoes = Doacao::all();
+
+        return view('options.doacoes', ['doacoes' => $doacoes]);
     }
 }

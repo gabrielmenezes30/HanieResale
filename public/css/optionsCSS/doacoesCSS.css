@@ -1,0 +1,15 @@
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100vh;
+}
+body{
+    background-color: aqua !important;
+}
+
+.card img{
+    height: 500px;
+    width: 250px;
+    padding: 20px;
+}

@@ -12,29 +12,27 @@
 }
 
 .caixaConversa{
-    display: flex; 
-    justify-content: space-evenly; 
+    display: flex;
+    justify-content: space-around;
 }
-.caixaConversa img{
-    width: 200px;
-    border: none;
-    
-}
+
 .caixaBotoes{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .teste{
     margin-top: 40px;
+    
 }
 .botoes{
-    width: 400px;
-    height: 60px;
+    width: 300px;
+    height: 300px;
     border: 2px solid #1C1C1C;
     background-color: #FBFBEF;
     color: #1C1C1C;
-    font-size: 30px;
+    font-size: 60px;
     font-family: 'Bebas Neue', cursive;
     border-radius: 10px;
     
@@ -47,12 +45,12 @@ hr{
     border: 1px solid #A4A4A4   ;
 }
 .botoes:hover{
-    width: 400px;
-    height: 60px;
+    width: 300px;
+    height: 300px;
     border: none;
     background-color: #8000FF;
     color: #ffffff;
-    font-size: 30px;
+    font-size: 60px;
     transition: ease-in-out 300ms;
     border-radius: 10px;
     -webkit-box-shadow: 6px 3px 12px -2px #000000; 

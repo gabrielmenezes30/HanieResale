@@ -1,17 +1,23 @@
 <?php
 
+use App\Http\Controllers\VendaController;
+use App\Http\Controllers\DoacoesController;
 
 
 Route::get('/', function(){
     return view('welcome');
 });
 
-// Route::get('vendas', 'VendasController@vendas')->name('vendas');
+// Criando evento e redirecionando rota Venda;
+Route::get('options/vendas', [VendaController::class, 'vendas']);
 
 
-//Controllers da opções de vendas e compras.
-Route::get('/options/vendas', 'VendaController@vendas')->name('vendas');
-Route::get('/options/doacoes', 'DoacoesController@doacao')->name('doacoes');
+Route::get('options/doacoes', [DoacoesController::class, 'doacao']);
+
+
+
+
+// Route::get('/options/doacoes', 'DoacoesController@doacao')->name('doacoes');
 
 //Rotas para o Controller do perfil. 
 Route::get('perfil/perfil', 'ProfileController@perfil')->name('perfil');
