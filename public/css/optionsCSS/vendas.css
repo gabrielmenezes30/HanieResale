@@ -1,0 +1,9 @@
+.row{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+    margin-top: 20px;
+}
+body{
+    background-color: #E46F3020;
+}

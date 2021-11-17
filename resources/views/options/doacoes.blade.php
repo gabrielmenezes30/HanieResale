@@ -15,23 +15,23 @@
     <title>@yield('title', 'Vendas') </title>
 </head>
 <body>
-   
+
     <nav class="navbar navbar-dark bg-dark fixed-top">
   <div class="container-fluid">
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-    <a class="navbar-brand" href="">@yield('navbarTitle', 'Vendas')</a>
-    <a class="navbar-brand" href="">
+    <a class="navbar-brand" href="">@yield('navbarTitle', 'Doações')</a>
+    <a class="navbar-brand" href="{{ route('createdoacao')}}">
         <button class="btn btn-primary">
             <i class="fas fa-plus"></i>
         </button>
         </a>
-    
+
     <div class="offcanvas offcanvas-start bg-danger" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title text-white" id="offcanvasNavbarLabel">@yield('textoCanvas', 'Vendas')</h5>
+        <h5 class="offcanvas-title text-white" id="offcanvasNavbarLabel">@yield('textoCanvas', 'Doações')</h5>
         <button type="button" class="btn-close text-reset btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
@@ -40,7 +40,7 @@
             <a class="nav-link active text-uppercase fs-4" aria-current="page" href="{{ route('perfil') }}">
             <i class="fas fa-user-circle"></i> perfil</a>
           </li>
-          
+
           <li class="nav-item">
             <a class="nav-link active fs-5" href="#"><i class="fas fa-shopping-cart"></i>
              Meus produtos</a>
@@ -59,25 +59,27 @@
 </nav>
 
 
-<section class="p-5 m-5">
-  
- <div id="card-container" class="row"> 
-@foreach($doacoes as $doacao)
-    <div class="card" style="width: 18rem;">
-  <img src="{{asset('assets/images/roupa.jpg')}}" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">{{$doacao->title}}</h5>
-    <p class="card-text">
-    {{$doacao->description}}
-    </p>
-    <a href="#" class="btn btn-primary">Ver</a>
-  </div>
-</div>
-@endforeach
+<section class="">
 
-  
-  </div>
-</section>
+    <div id="card-container" class="row">
+   @foreach($doacoes as $doacoes)
+       <div class="card mt-5 " style="width: 20rem; height: 32rem;">
+           <img src="{{asset('assets/images/roupa.jpg')}}" class="card-img-top" alt="..." style="width: 20rem; height: 20rem; margin-left:-11px;">
+           <a class="p-1" href="">
+               <button type="button" class="btn btn-outline-primary">
+           </a>
+            Conferir
+          </button>
+
+           <div class="card-body">
+             <h5 class="card-title">{{$doacoes->title}}</h5>
+             <p class="card-text"> {{$doacoes->description}}</p>
+             <h6 class="text-danger">{{$doacoes->city}}</p>
+           </div>
+         </div>
+
+   @endforeach
+        </section>
 </body>
 
 
@@ -92,13 +94,10 @@
     main{
       margin-top: 10rem;
     }
-    .row{
-        dis
-    }
 </style>
-{{-- <div id="card-container" class="row"> 
+{{-- <div id="card-container" class="row">
 @foreach($doacoes as $doacao)
-    
+
     <p>{{$doacao->title}}  -- {{$doacao->description}} -- {{$doacao->title}}</p>
 @endforeach
 

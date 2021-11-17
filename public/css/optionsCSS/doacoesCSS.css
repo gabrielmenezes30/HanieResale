@@ -1,15 +1,9 @@
 .row{
     display: flex;
-    align-items: center;
     justify-content: space-evenly;
-    height: 100vh;
+    padding: 20px;
+    margin-top: 20px;
 }
 body{
-    background-color: aqua !important;
-}
-
-.card img{
-    height: 500px;
-    width: 250px;
-    padding: 20px;
+    background-color: #E46F3020;
 }

@@ -1,0 +1,49 @@
+body{
+    background-color: #7401df;
+}
+.form-control{
+   width: 500px;
+}
+/* .controle{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 10rem;
+    width: 100vh;
+    height: 100vh;
+    border: none;
+    background-color: #7401df;
+    color: #ffffff;
+}
+.container{
+    display: flex;
+    justify-content: space-around;
+    width: 90vh;
+} */
+.controle{
+    display: flex;
+    flex-direction: column;
+}
+.container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    color: #ffffff;
+
+}
+.teste{
+    display: flex;
+    flex-direction: column;
+}
+.botoes{
+    display: flex;
+    flex-direction: column;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+}
+.btn{
+    width: 200px !important;
+}

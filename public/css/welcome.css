@@ -1,5 +1,6 @@
 html, body {
-    background-color: #FE9A2E;
+    /* background-color: #FE9A2E; */
+    background-color: #DF7401;
     color: #636b6f;
     font-family: 'Nunito', sans-serif;
     font-weight: 200;
@@ -24,7 +25,7 @@ html, body {
 
 .top-right {
     position: absolute;
-   
+
 }
 
 .content {
@@ -33,7 +34,7 @@ html, body {
 
 .title {
     font-size: 100px;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Nunito', sans-serif;
     color: #0B0B3B;
 }
 
@@ -57,7 +58,7 @@ html, body {
     height: 70px;
     border-radius: 5px;
     font-size: 25px;
-    -webkit-box-shadow: 6px 3px 12px -2px #000000; 
+    -webkit-box-shadow: 6px 3px 12px -2px #000000;
     box-shadow: 6px 3px 12px -2px #000000;
     cursor: pointer;
 }
@@ -66,7 +67,7 @@ html, body {
 }
 
 .btn1{
-    background-color: transparent;
+    background-color: #FE9A2E;
     color: #151515;
 }
 .btn1:hover{
@@ -75,7 +76,7 @@ html, body {
     transition: ease-in-out 400ms;
 }
 .btn2{
-    background-color: transparent;
+    background-color: #BE81F7;
     color: #151515;
 }
 .btn2:hover{
@@ -90,7 +91,7 @@ html, body {
     height: 70px;
     border-radius: 5px;
     font-size: 25px;
-    -webkit-box-shadow: 6px 3px 12px -2px #000000; 
+    -webkit-box-shadow: 6px 3px 12px -2px #000000;
     box-shadow: 6px 3px 12px -2px #000000;
     cursor: pointer;
     color: #151515;

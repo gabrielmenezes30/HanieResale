@@ -13,4 +13,22 @@ class DoacoesController extends Controller
 
         return view('options.doacoes', ['doacoes' => $doacoes]);
     }
+
+    public function createdoacao(){
+        return view ('createdoacao.doacao');
+    }
+    public function storee(Request $request){
+        $doacoes = new Doacao;
+
+        $doacoes->title = $request->title;
+        $doacoes->city = $request->city;
+        $doacoes->description = $request->description;
+        $doacoes->gender = $request->gender;
+
+        $doacoes->save();
+
+        return view('home')->with('doacoes', $doacoes);
+
+    }
+
 }
