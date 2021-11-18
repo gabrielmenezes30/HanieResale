@@ -25,6 +25,7 @@
                     Hanie Resale
                 </div>
             </div>
+            <!--Eu passei por aqui-->
 
             <!-- @if (Route::has('login'))
                 <div class="top-right links">
