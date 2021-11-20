@@ -44,6 +44,69 @@ html, body {
     transition: 600ms ease-out;
     border-radius: 4px;
 }
+.arrow{
+    margin-top: 100px;
+    animation: go-back 1s infinite alternate;
+}
+.arrow i{
+    font-size: 60px;
+    color: #FF8700;
+}
+
+@keyframes go-back {
+    from {
+      transform: translateY(100px);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+#segundaSection{
+    margin-top: 300px;
+}
+.textoPecas{
+    font-size: 70px;
+    color: tomato;
+    font-family: 'Architects Daughter', cursive;
+}
+.boxCard{
+    margin-top: 50px;
+}
+.boxInfo{
+    margin-left: 60px;
+    margin-top: 60px;
+    width: 200px;
+    height: 50px;
+    background-color: #FF8700;
+    color: #3F3D56;
+}
+.boxInfo h1{
+    margin-top: -40px;
+    font-size: 60px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.teste{
+    margin-left: 30px;
+}
+
+footer{
+    margin-top: 100px;
+    padding: 100px;
+    background-color: #3F3D56;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* .full-height {
     height: 100vh;
 }
