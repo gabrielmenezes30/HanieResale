@@ -79,7 +79,7 @@
 
 <style>
      body, html{
-        background-color: #6E6E6E !important; 
+        background-color: #6E6E6E !important;
     }
     .cor-card{
         background-color: #FF8000 !important;
