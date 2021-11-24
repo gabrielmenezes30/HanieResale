@@ -1,49 +1,46 @@
 body{
-    background-color: #7401df;
+    background-color: #ffffff;
 }
-.form-control{
-   width: 500px;
-}
-/* .controle{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: 10rem;
-    width: 100vh;
-    height: 100vh;
-    border: none;
-    background-color: #7401df;
-    color: #ffffff;
-}
-.container{
-    display: flex;
-    justify-content: space-around;
-    width: 90vh;
-} */
-.controle{
-    display: flex;
-    flex-direction: column;
-}
-.container{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 100vh;
-    color: #ffffff;
 
+.content{
+    margin-top: 100px;
 }
-.teste{
-    display: flex;
-    flex-direction: column;
+
+.text{
+    margin-left: 280px;
+    font-size: 30px;
 }
-.botoes{
-    display: flex;
-    flex-direction: column;
+
+.formulario{
+    width: 400px;
 }
-.form{
-    display: flex;
-    flex-direction: column;
+
+label{
+    font-size: 20px;
 }
-.btn{
-    width: 200px !important;
+
+.btn1{
+    background-color: #FF8700;
+    color: #ffffff;
+    width: 200px;
+    height: 50px;
+    border: none;
+    border-radius: 4px;
+    font-size: 30px;
+}
+.btn2{
+    margin-top: 20px;
+    background-color: #FF8700;
+    color: #ffffff;
+    width: 200px;
+    height: 50px;
+    border: none;
+    border-radius: 4px;
+    font-size: 30px;
+}
+.btn1:hover{
+    background-color: #dc7603;
+}
+.btn2:hover{
+    background-color: #dc7603;
 }

@@ -14,6 +14,7 @@ class VendaController extends Controller
         $vendas = Venda::all();
 
         return view('options.vendas', ['vendas' => $vendas] );
+
     }
 
     public function createvenda(){
@@ -28,7 +29,7 @@ class VendaController extends Controller
         $vendas->description = $request->description;
         $vendas->price = $request->price;
         $vendas->gender = $request->gender;
-        
+
         $vendas->save();
 
       return view('home');

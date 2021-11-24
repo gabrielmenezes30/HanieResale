@@ -34,7 +34,7 @@
         <div class="container-fluid">
             <div class="containerTexto">
                 <div>
-                    <h1 class="text-white">Seja bem vindo(a)
+                    <h1 class="text-dark">Seja bem vindo(a)
                         <strong>
                             <!-- Passando o parametro do nome do usuario a view -->
                             {{ Auth::user()->name }}

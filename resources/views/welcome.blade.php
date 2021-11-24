@@ -182,13 +182,21 @@
                     </div>
                 </div>
             </div>
+
         </section>
 
-        <footer>
+        <footer class="d-flex flex-row align-items-center justify-content-around">
             <div>
                 <h5 class="text-white fs-1">Hanie Resale</h5>
             </div>
+            <div>
+                <h3 class="text-white">Contato</h3>
+                <p class="text-white">HanieResale@contato.com</p>
+            </div>
         </footer>
+        <div class="text-center pt-2 pb-2" style="background-color:#3F3D56;">
+            <p class="text-white">Direitos reservados© </p>
+        </div>
     </body>
 
         <!-- Font Awesome -->

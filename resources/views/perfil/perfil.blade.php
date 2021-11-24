@@ -1,24 +1,12 @@
+@extends ('layouts.app')
 
 
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    {{-- link CSS perfil --}}
-    <link href="{{ asset('css/perfil/perfil.css') }}" rel="stylesheet">
-    <!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>Document</title>
-</head>
-<body>
+@section('content')
+<link rel="stylesheet" href="{{asset('css/perfil/perfil.css')}}">
    <!-- <p>{{ Auth::user()->name }} </p>
    <p>{{ Auth::user()->email }}</p> -->
 
-   <div class="controle">
+   {{-- <div class="controle">
        <div class="container">
            <div class="teste">
                <div class="mb-3 form">
@@ -43,22 +31,69 @@
 
           </div>
        </div>
-   </div>
+   </div> --}}
+
+   <main class="container-fluid content">
+       <p class="text"><i class="fas fa-user-circle"></i> Informações pessoais</p>
+       <div class="d-flex flex-row align-items-center justify-content-around
+       ">
+           <div class="d-flex flex-column ">
+               <div class="mt-3 d-flex flex-column formulario">
+                   <label for="">Nome</label>
+                   <input type="text" class="form-control" >
+               </div>
+               <div class="mt-3 d-flex flex-column">
+                <label for="">Email</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="mt-3 d-flex flex-column">
+                <label for="title">Biografia</label>
+                <textarea class="form-control" name="description" id="description" maxlength="100"></textarea>
+            </div>
+
+           </div>
+           <div class="d-flex flex-column">
+            <a href="">
+                <button class="btn1 ">
+                    Vendas
+                </button>
+            </a>
+            <a href="">
+                <button class="btn2 ">
+                    Doações
+                </button>
+            </a>
+           </div>
+       </div>
+   </main>
 
 
 
-
-
-</body>
+@endsection
 
     <style>
-        body{
+        main{
+            background-color: #ffffff;
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+        /* body{
             background-color: #7401df;
         }
         .form-control{
            width: 500px;
         }
-        /* .controle{
+        .controle{
             display: flex;
             flex-direction: column;
             align-items: flex-start;
@@ -73,7 +108,7 @@
             display: flex;
             justify-content: space-around;
             width: 90vh;
-        } */
+        }
         .controle{
             display: flex;
             flex-direction: column;
@@ -100,7 +135,7 @@
         }
         .btn{
             width: 200px !important;
-        }
+        } */
 
     </style>
 </html>
