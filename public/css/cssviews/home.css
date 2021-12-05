@@ -1,66 +1,51 @@
-body{
-    background-color: #ffffff;
-}
 
-
-.body{
-    margin-top: -30px;
-    padding-top: 100px;
-    padding-left: 150px;
-    padding-right: 150px;
-    background-image: url(../../assets/images/background.jpg);
+.main{
+    background-image: url(../../assets/images/background/armario-custom.png);
+    background-repeat: no-repeat;
     background-size: cover;
-    margin-bottom: -30px;
-    padding-bottom: 300px;
-}
-.containerTexto{
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
-}
-.containerTexto strong{
-    color:#FE2E2E;
-}
-.divContainer{
-    margin-top: 6rem;
+    background-position: left;
+   height: 50vh;
 }
 
-
-.caixaBotoes{
-    display: flex;
-    justify-content: space-evenly;
-}
 .teste{
-    margin-top: 40px;
+    margin-top: -50px;
+}
+.search{
+    width: 600px;
+    height: 50px;
+}
+
+#content{
+    padding-top: 1px;
+    background-color: #D8D8D8;
+}
+.btn:hover{
+    background-color: #3F3D56;
+    border: 1px solid #3F3D56;
+    transition: ease 300ms;
 
 }
-.botoes{
-    width: 350px;
-    height: 300px;
-    border: 2px solid #1C1C1C;
-    background-color: #FBFBEF;
-    color: #1C1C1C;
-    font-size: 60px;
-    font-family: 'Bebas Neue', cursive;
-    border-radius: 10px;
-
-}
-.botoes i{
-    margin-right: 10px;
-}
-hr{
-    width: 100%;
-    border: 1px solid #A4A4A4   ;
-}
-.botoes:hover{
-    width: 350px;
-    height: 300px;
+.btnTela{
+    background-color: #FF8700;
+    border: 1px solid #FF8700;
+    width: 250px;
     border: none;
-    background-color: #8000FF;
+    border-radius: 4px;
+    height: 50px;
     color: #ffffff;
-    font-size: 60px;
-    transition: ease-in-out 300ms;
-    border-radius: 10px;
-    -webkit-box-shadow: 6px 3px 12px -2px #000000;
-    box-shadow: 6px 3px 12px -2px #000000;
+    font-size: 30px;
+}
+.btnTela:hover{
+    background-color: #3F3D56;
+    border: 1px solid #3F3D56;
+    transition: ease 300ms;
+}
+
+.container-fluid2{
+    padding-top: 800px;
+}
+.gradient{
+
+    width: 100%;
+    height: 80px;
 }

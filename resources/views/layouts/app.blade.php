@@ -23,20 +23,18 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light" style="background-color: #F8F9FA;">
-            <div class="container">
+        <nav class="navbar navbar-expand-md navbar-dark ">
+            <div class="container ">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    Hanie Resale
+                     Hanie Resale
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse botoes" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
 
-                    </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -74,6 +72,7 @@
                                     </form>
                                 </div>
                             </li>
+
                         @endguest
                     </ul>
                 </div>
@@ -102,3 +101,16 @@
 <!-- Link FontAwesome -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 </html>
+
+
+<style scoped>
+    .navbar-brand{
+        font-size: 30px;
+    }
+    .navbar{
+        font-size: 30px;
+    }
+.navbar-vendas{
+    font-size: 30px;
+}
+</style>

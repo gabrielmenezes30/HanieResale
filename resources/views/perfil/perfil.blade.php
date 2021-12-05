@@ -72,12 +72,7 @@
 @endsection
 
     <style>
-        main{
-            background-color: #ffffff;
-
-        }
-
-
+        
 
 
 

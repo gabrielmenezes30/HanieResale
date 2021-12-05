@@ -1,9 +1,15 @@
 body{
-    background-color: #ffffff;
+    background-color: #F2F2F2;
 }
 
 .content{
     margin-top: 100px;
+    background-color: #ffffff;
+    width: 1400px;
+    padding-bottom: 40px;
+    padding-top: 40px;
+    border-radius: 20px;
+
 }
 
 .text{

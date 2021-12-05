@@ -57,6 +57,27 @@
     </div>
   </div>
 </nav>
+<section class="">
+    <div class="d-flex flex-row align-items justify-content-center teste">
+           <div class="d-flex flex-column">
+               <div class="d-flex flex-row align-items justify-content-center" style="margin-top: 100px; font-size: 50px;">
+                   <p class="text-dark">Pesquisa uma peça!</p>
+               </div>
+               <form class="d-flex flex-column container-search" action="{{ route('vendas') }}" method="GET">
+                   <input class="form-control me-2 search" type="search" placeholder="Search" aria-label="Search" name="search" id="search">
+                   <button class="btn btn-success mt-4" type="submit">Pesquisar</button>
+               </form>
+           </div>
+       </div>
+   </section>
+   @if($search)
+   <div class="margin">
+       <h1 class="text-center">Buscando por: <span class="text-danger" style="font-weight: 700">"{{ $search }}"</span> </h1>
+   </div>
+   @elseif($search == null)
+   <h1 class="text-center mt-5">Por favor, preencha o campo para fazer uma busca</h1>
+    @else
+   @endif
 
 
 {{-- <section class="">
@@ -107,23 +128,38 @@
    <section class="">
 
     <div id="card-container" class="row">
-   @foreach($vendas as $vendas)
-       <div class="card mt-5" style="width: 20rem; height: 32rem;">
-           <img src="{{asset('assets/images/roupa.jpg')}}" class="card-img-top" alt="..." style="width: 20rem; height: 20rem; margin-left:-11px;">
-           <a class="p-1" href="">
+   @foreach($venda as $venda)
+       <div class="card mt-5" style="width: 20rem; height: 31rem;">
+           <img src="/storage/produtos/{{ $venda->image }}" class="card-img-top" alt="..." style="width: 20rem; height: 20rem; margin-left:-11px;">
+           <a class="p-1" href="/create/{{ $venda->id }}">
                <button type="button" class="btn btn-outline-primary">
-           </a>
-            Conferir
-          </button>
+                   Chat
+                </button>
+            </a>
 
            <div class="card-body">
-             <h5 class="card-title">{{$vendas->title}}</h5>
-             <p class="card-text"> {{$vendas->description}}</p>
-             <h6 class="text-danger">{{$vendas->city}}</p>
+             <h5 class="card-title">{{$venda->title}}</h5>
+             <p class="card-text"> {{$venda->description}}</p>
+             <div class="d-flex flex-row justify-content-around">
+                 <h6 class="text-danger">Cidade: {{$venda->city}}</p>
+                <h6 class="text-success">Preço: R${{$venda->price}}</p>
+             </div>
            </div>
          </div>
 
    @endforeach
+   @if (is_countable($venda) && count($venda) == 0 && $search)
+       <h1 class="text-center">Não foi possivel encontrar nenhuma peça com:
+           <span class="text-danger" style="font-weight: 700">
+            "{{ $search }}"!
+            </span>  <br> <br>
+          <a class="d-flex justify-content-center" href="{{ route('vendas') }}">
+              <button class="btn btn-lg btn-primary">Ver todos!</button>
+          </a>
+      </h1>
+    @elseif(is_countable($venda) && count($venda) == 0)
+         <h1>Não temos peças disponiveis</h1>
+   @endif
         </section>
 
 
@@ -144,5 +180,8 @@
     }
     main{
       margin-top: 10rem;
+    }
+    .margin{
+        margin-top: 100px;
     }
 </style>

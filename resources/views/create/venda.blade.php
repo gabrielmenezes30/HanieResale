@@ -6,8 +6,12 @@
         <div>
             <div id="create-venda-container" class="col-md-6 offset-md-3">
                 <h1>Venda sua peça!</h1>
-                <form action="/create" method="POST">
+                <form action="/create" method="POST" enctype="multipart/form-data">
                     @csrf
+                    <div class="form-group">
+                        <label for="image">Adicione uma foto</label>
+                        <input type="file" id="image" name="image" class="form-control-file">
+                    </div>
                     <div class="form-group">
                         <label for="title">Titulo</label>
                         <input type="text" class="form-control" id="title" name="title" placeholder="Ex: T-shirt....Calça....">

@@ -20,6 +20,7 @@ class CreateVendasTable extends Migration
             $table->string('city');
             $table->float('price');
             $table->boolean('gender');
+            $table->string('image');
             $table->timestamps();
         });
     }
@@ -31,6 +32,8 @@ class CreateVendasTable extends Migration
      */
     public function down()
     {
+
         Schema::dropIfExists('vendas');
+
     }
 }

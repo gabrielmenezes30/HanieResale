@@ -23,7 +23,7 @@
       </button>
 
     <a class="navbar-brand" href="">@yield('navbarTitle', 'Doações')</a>
-    <a class="navbar-brand" href="{{ route('createdoacao')}}">
+    <a class="navbar-brand" href="{{ route('createdoacao') }}">
         <button class="btn btn-primary">
             <i class="fas fa-plus"></i>
         </button>
@@ -58,18 +58,37 @@
   </div>
 </nav>
 
+<div class="d-flex flex-row align-items justify-content-center teste">
+    <div class="d-flex flex-column">
+        <div class="d-flex flex-row align-items justify-content-center" style="margin-top: 100px; font-size: 50px;">
+            <p class="text-dark">Pesquisa uma peça!</p>
+        </div>
+        <form class="d-flex flex-column container-search" action="{{ route('doacoes') }}" method="GET">
+            <input class="form-control me-2 search" type="search" placeholder="Search" aria-label="Search" name="search" id="search">
+            <button class="btn btn-success mt-4" type="submit">Pesquisar</button>
+        </form>
+    </div>
+</div>
+@if($search)
+   <div class="margin">
+       <h1 class="text-center">Buscando por: <span class="text-danger" style="font-weight: 700">"{{ $search }}"</span> </h1>
+   </div>
+   @elseif($search == null)
+   <h1 class="text-center mt-5">Por favor, preencha o campo para fazer uma busca</h1>
+    @else
+   @endif
 
 <section class="">
 
     <div id="card-container" class="row">
    @foreach($doacoes as $doacoes)
        <div class="card mt-5 " style="width: 20rem; height: 32rem;">
-           <img src="{{asset('assets/images/roupa.jpg')}}" class="card-img-top" alt="..." style="width: 20rem; height: 20rem; margin-left:-11px;">
-           <a class="p-1" href="">
-               <button type="button" class="btn btn-outline-primary">
-           </a>
-            Conferir
-          </button>
+           <img src="/storage/produtos/{{ $doacoes->image }}" class="card-img-top" alt="..." style="width: 20rem; height: 20rem; margin-left:-11px;">
+           <a class="p-1" href="/create/doacao/{{ $doacoes->id }}">
+            <button type="button" class="btn btn-outline-primary">
+                Chat
+             </button>
+         </a>
 
            <div class="card-body">
              <h5 class="card-title">{{$doacoes->title}}</h5>
@@ -79,6 +98,18 @@
          </div>
 
    @endforeach
+   @if (is_countable($doacoes) && count($doacoes) == 0 && $search)
+   <h1 class="text-center">Não foi possivel encontrar nenhuma peça com:
+       <span class="text-danger" style="font-weight: 700">
+        "{{ $search }}"!
+        </span>  <br> <br>
+      <a class="d-flex justify-content-center" href="{{ route('doacoes') }}">
+          <button class="btn btn-lg btn-primary">Ver todos!</button>
+      </a>
+  </h1>
+@elseif(is_countable($doacoes) && count($venda) == 0)
+     <h1>Não temos peças disponiveis</h1>
+@endif
         </section>
 </body>
 
@@ -93,6 +124,9 @@
     }
     main{
       margin-top: 10rem;
+    }
+    .margin{
+        margin-top: 100px;
     }
 </style>
 {{-- <div id="card-container" class="row">
