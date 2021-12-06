@@ -32,9 +32,28 @@
           </div>
        </div>
    </div> --}}
+   @if(session('msg'))
+   >
+    {{-- <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
+        <span class="msg">{{session('msg')}}</span>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div> --}}
+    <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">Opa</h4>
+        <span class="msg">{{session('msg')}}</span>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        <hr>
+      </div>
 
+          @endif
+          @yield('content')
    <main class="container-fluid content">
-       <p class="text"><i class="fas fa-user-circle"></i> Informações pessoais</p>
+       <p class="text text-white"><i class="fas fa-user-circle"></i> Informações pessoais</p>
        <div class="d-flex flex-row align-items-center justify-content-around
        ">
            <div class="d-flex flex-column ">
@@ -46,19 +65,15 @@
                 <label for="">Email</label>
                 <input type="text" class="form-control">
             </div>
-            <div class="mt-3 d-flex flex-column">
-                <label for="title">Biografia</label>
-                <textarea class="form-control" name="description" id="description" maxlength="100"></textarea>
-            </div>
 
            </div>
            <div class="d-flex flex-column">
-            <a href="">
+            <a href="{{ route('vendas')}}">
                 <button class="btn1 ">
                     Vendas
                 </button>
             </a>
-            <a href="">
+            <a href="{{ route('doacoes')}}">
                 <button class="btn2 ">
                     Doações
                 </button>
@@ -66,11 +81,42 @@
            </div>
        </div>
 
-       <div>
-            <h1 class="mt-5 text-center">Minhas peças</h1>
+       <div class="dashboard-container">
 
-            
-            <p>Você ainda não tem nenhum item adicionado</p>
+            <h1 class="mt-5 text-center">Minhas peças para venda</h1>
+            @if(count($vendas) > 0)
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Venda</th>
+                        <th scope="col">Peças</th>
+                        <th scope="col">Ações</th>
+
+                    </tr>
+                </thead>
+                <tbody class="">
+                    @foreach($vendas as $venda)
+
+                    <tr>
+                        <td scropt="row">{{ $loop->index +1 }}</td>
+                        <td><a href="/create/{{ $venda->id }}">{{ $venda->title }}</a></td>
+
+                        <td>
+                            <a href="/create/edit/{{ $venda->id }}" class="btn btn-success edit-btn">Editar</a>
+
+                           <form action="/create/{{ $venda->id }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger delete-btn">Deletar</button>
+                            </form>
+                    </tr>
+
+                    @endforeach
+                </tbody>
+            </table>
+            @else
+            <h3 class="text-center mt-5">Você ainda não tem nenhuma peça à venda</h3>
+            @endif
        </div>
 
 
@@ -85,6 +131,13 @@
 @endsection
 
     <style>
+        .dashboard-container{
+            margin-bottom: 30px;
+            margin-top: 30px;
+        }
+        .dashboard-container form{
+            display: inline-block;
+        }
 
 
 

@@ -1,10 +1,17 @@
 body{
     background-color: #F2F2F2;
+    background-image: url(../../assets/images/background/image.jpg);
+    background-size: cover;
 }
+.navbar{
+    background: #111111;
+    font-size: 20px !important;
 
+}
 .content{
     margin-top: 100px;
-    background-color: #ffffff;
+    background-color: #ffffff30;
+    -webkit-backdrop-filter: blur(12px);
     width: 1400px;
     padding-bottom: 40px;
     padding-top: 40px;

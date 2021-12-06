@@ -37,7 +37,7 @@
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li class="nav-item">
-            <a class="nav-link active text-uppercase fs-4" aria-current="page" href="{{ route('perfil') }}">
+            <a class="nav-link active text-uppercase fs-4" aria-current="page" href="{{ route('dashboard') }}">
             <i class="fas fa-user-circle"></i> perfil</a>
           </li>
 
@@ -74,10 +74,8 @@
    <div class="margin">
        <h1 class="text-center">Buscando por: <span class="text-danger" style="font-weight: 700">"{{ $search }}"</span> </h1>
    </div>
-   @elseif($search == null)
-   <h1 class="text-center mt-5">Por favor, preencha o campo para fazer uma busca</h1>
-    @else
    @endif
+
 
 
 {{-- <section class="">
@@ -131,10 +129,8 @@
    @foreach($venda as $venda)
        <div class="card mt-5" style="width: 20rem; height: 31rem;">
            <img src="/storage/produtos/{{ $venda->image }}" class="card-img-top" alt="..." style="width: 20rem; height: 20rem; margin-left:-11px;">
-           <a class="p-1" href="/create/{{ $venda->id }}">
-               <button type="button" class="btn btn-outline-primary">
-                   Chat
-                </button>
+           <a class="p-1 btn btn-outline-primary mt-3" href="/create/{{ $venda->id }}">
+                   Conferir
             </a>
 
            <div class="card-body">
@@ -158,7 +154,7 @@
           </a>
       </h1>
     @elseif(is_countable($venda) && count($venda) == 0)
-         <h1>Não temos peças disponiveis</h1>
+         <h1 class="text-center mt-5">Não temos peças disponiveis</h1>
    @endif
         </section>
 

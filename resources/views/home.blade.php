@@ -51,19 +51,7 @@
         </div>
 
 
-        <section class="">
-            <div class="d-flex flex-row align-items justify-content-center teste">
-                   <div class="d-flex flex-column">
-                       <div class="d-flex flex-row align-items justify-content-center" style="margin-top: 100px; font-size: 50px;">
-                           <p class="text-dark">Pesquisa uma peça!</p>
-                       </div>
-                       <form class="d-flex flex-column container-search" action="home" method="GET">
-                           <input class="form-control me-2 search" type="search" placeholder="Search" aria-label="Search" name="search" id="search">
-                           <button class="btn btn-success mt-4" type="submit">Pesquisar</button>
-                       </form>
-                   </div>
-               </div>
-           </section>
+        
 
         <div class="d-flex justify-content-center mt-5 p-5">
             <img src="{{asset('assets/images/svg/gatos-welcome.svg')}}" alt="" width="600px">

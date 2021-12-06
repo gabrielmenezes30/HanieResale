@@ -3,6 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\User;
+
 
 class Doacao extends Model
 {
@@ -11,4 +13,9 @@ class Doacao extends Model
     protected $fillable = [
         'title', 'description', 'city', 'image', 'gender',
     ];
+
+    public function user(){
+        return $this->belongsTo('App\User');
+    }
+
 }

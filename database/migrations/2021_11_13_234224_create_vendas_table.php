@@ -21,6 +21,7 @@ class CreateVendasTable extends Migration
             $table->float('price');
             $table->boolean('gender');
             $table->string('image');
+            $table->integer('user_id')->unsigned();
             $table->timestamps();
         });
     }

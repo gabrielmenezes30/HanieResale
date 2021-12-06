@@ -66,11 +66,41 @@
            </div>
        </div>
 
-       <div>
-            <h1 class="mt-5 text-center">Minhas peças</h1>
+       <div class="dashboard-container">
+            <h1 class="mt-5 text-center">Minhas peças para Doacao</h1>
+            @if(count($doacoes) > 0)
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Venda</th>
+                        <th scope="col">Peças</th>
+                        <th scope="col">Ações</th>
 
-            
-            <p>Você ainda não tem nenhum item adicionado</p>
+                    </tr>
+                </thead>
+                <tbody class="">
+                    @foreach($doacoes as $doacao)
+
+                    <tr>
+                        <td scropt="row">{{ $loop->index +1 }}</td>
+                        <td><a href="/create/doacao/{{ $doacao->id }}" class="text-success">{{ $doacao->title }}</a></td>
+
+                        <td>
+                            <a href="/create/doacao/edit/{{ $doacao->id }}" class="btn btn-success edit-btn">Editar</a>
+
+                           <form action="/create/doacao/{{ $doacao->id }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger delete-btn">Deletar</button>
+                            </form>
+                    </tr>
+
+                    @endforeach
+                </tbody>
+            </table>
+            @else
+            <h3 class="text-center mt-5">Você ainda não tem nenhuma peça à doação</h3>
+            @endif
        </div>
 
 
@@ -85,6 +115,13 @@
 @endsection
 
     <style>
+        .dashboard-container{
+            margin-bottom: 30px;
+            margin-top: 30px;
+        }
+        .dashboard-container form{
+            display: inline-block;
+        }
 
 
 

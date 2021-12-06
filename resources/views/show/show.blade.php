@@ -12,6 +12,10 @@
         <div id="info-container" class="col-md-6">
             <h1>
                 <i class="fas fa-align-justify"></i>
+                Dono: {{ $vendasOwner['name'] }}
+            </h1>
+            <h1>
+                <i class="fas fa-align-justify"></i>
                 Titulo: {{ $vendas->title }}
             </h1>
             <h1>

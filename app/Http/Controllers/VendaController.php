@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Storage;
 
 use Illuminate\Http\Request;
 use App\Venda;
+use App\User;
 
 
 class VendaController extends Controller
@@ -68,6 +69,9 @@ class VendaController extends Controller
             // dd($vendas->image);
         }
 
+        $user = auth()->user();
+        $vendas->user_id  = $user->id;
+
         $vendas->save();
 
       return redirect('home')->with('msg', 'Venda criada com sucesso! entre em "Vendas" Para vê-lo.');
@@ -75,9 +79,47 @@ class VendaController extends Controller
     }
 
     public function destroy($id){
+
         Venda::findOrFail($id)->delete();
 
-        return redirect('/home')->with('msg', 'Evento excluído com sucesso!');
+        return redirect('/dashboard')->with('msg', 'Venda excluída com sucesso!');
+    }
+
+    public function edit($id){
+
+        $vendas = Venda::findOrFail($id);
+
+        return view('create.vendaedit', ['venda' => $vendas]);
+
+    }
+
+    public function update(Request $request)
+    {
+
+        $data = $request->all();
+
+        if($request->hasFile('image') && $request->file('image')->isValid()){
+
+
+
+            $requestImage = $request->image;
+
+            $extension = $requestImage->extension();
+
+
+
+            $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;
+
+
+            $path = $request->file('image')->storeAs('produtos', $imageName);
+
+            $data['image'] = $imageName;
+
+        }
+
+        Venda::findOrFail($request->id)->update($data);
+
+        return redirect('/dashboard')->with('msg', 'Editado com sucesso!');
     }
 
 
@@ -86,9 +128,19 @@ class VendaController extends Controller
 
         $vendas = Venda::findOrFail($id);
 
-        return view('show.show', ['vendas' => $vendas]);
+        $vendasOwner = User::where('id', $vendas->user_id)->first()->toArray();
+
+        return view('show.show', ['vendas' => $vendas, 'vendasOwner' => $vendasOwner]);
+    }
+
+    public function dashboard(){
 
 
+        $user = auth()->user();
+
+        $vendas = $user->vendas;
+
+        return view('perfil.dashboard', ['vendas' => $vendas]);
 
     }
 }

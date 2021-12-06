@@ -12,7 +12,7 @@
     <link href="{{ asset('css/optionsCSS/doacoesCSS.css') }}" rel="stylesheet">
 
 
-    <title>@yield('title', 'Vendas') </title>
+    <title>@yield('title', 'Doacoes') </title>
 </head>
 <body>
 
@@ -37,7 +37,7 @@
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li class="nav-item">
-            <a class="nav-link active text-uppercase fs-4" aria-current="page" href="{{ route('perfil') }}">
+            <a class="nav-link active text-uppercase fs-4" aria-current="page" href="{{ route('dashboard') }}">
             <i class="fas fa-user-circle"></i> perfil</a>
           </li>
 
@@ -73,9 +73,6 @@
    <div class="margin">
        <h1 class="text-center">Buscando por: <span class="text-danger" style="font-weight: 700">"{{ $search }}"</span> </h1>
    </div>
-   @elseif($search == null)
-   <h1 class="text-center mt-5">Por favor, preencha o campo para fazer uma busca</h1>
-    @else
    @endif
 
 <section class="">
@@ -84,10 +81,8 @@
    @foreach($doacoes as $doacoes)
        <div class="card mt-5 " style="width: 20rem; height: 32rem;">
            <img src="/storage/produtos/{{ $doacoes->image }}" class="card-img-top" alt="..." style="width: 20rem; height: 20rem; margin-left:-11px;">
-           <a class="p-1" href="/create/doacao/{{ $doacoes->id }}">
-            <button type="button" class="btn btn-outline-primary">
-                Chat
-             </button>
+        <a class="p-1 btn btn-outline-primary mt-3" href="/create/doacao/{{ $doacoes->id }}">
+            Conferir
          </a>
 
            <div class="card-body">
@@ -107,7 +102,7 @@
           <button class="btn btn-lg btn-primary">Ver todos!</button>
       </a>
   </h1>
-@elseif(is_countable($doacoes) && count($venda) == 0)
+@elseif(is_countable($doacoes) && count($doacoes) == 0)
      <h1>Não temos peças disponiveis</h1>
 @endif
         </section>

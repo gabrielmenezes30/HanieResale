@@ -57,6 +57,9 @@ class DoacoesController extends Controller
 
         }
 
+        $user = auth()->user();
+        $doacoes->user_id  = $user->id;
+
         $doacoes->save();
 
         // return view('home')->with('doacoes', $doacoes);
@@ -72,6 +75,62 @@ class DoacoesController extends Controller
 
 
 
+    }
+
+    public function dashboard(){
+
+
+        $user = auth()->user();
+
+        $doacoes = $user->doacoes;
+
+        return view('perfil.dashboarddoacao', ['doacoes' => $doacoes]);
+
+    }
+
+    public function destroy($id){
+
+        Doacao::findOrFail($id)->delete();
+
+        return redirect('/dashboard/doacao')->with('msg', 'Venda excluída com sucesso!');
+    }
+
+    public function edit($id){
+
+        $doacoes = Doacao::findOrFail($id);
+
+        return view('create.doacaoedit', ['doacao' => $doacoes]);
+
+    }
+
+    public function update(Request $request)
+    {
+
+        $data = $request->all();
+
+        if($request->hasFile('image') && $request->file('image')->isValid()){
+
+
+
+            $requestImage = $request->image;
+
+            $extension = $requestImage->extension();
+
+
+
+            $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;
+
+
+
+            $path = $request->file('image')->storeAs('produtos', $imageName);
+
+            $data['image'] = $imageName;
+
+        }
+
+        Doacao::findOrFail($request->id)->update($data);
+
+        return redirect('/home')->with('msg', 'Editado com sucesso!');
     }
 
 }
