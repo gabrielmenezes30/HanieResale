@@ -1,12 +1,14 @@
 
-.main{
+/* .main{
     background-image: url(../../assets/images/background/armario-custom.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: left;
-   height: 50vh;
+   height: 60vh;
+} */
+.navbar{
+    background-color: #111111 !important;
 }
-
 .teste{
     margin-top: -50px;
 }
@@ -25,21 +27,61 @@
     transition: ease 300ms;
 
 }
-.btnTela{
+/* .btnTela{
     background-color: #FF8700;
     border: 1px solid #FF8700;
-    width: 250px;
+    width: 300px;
     border: none;
     border-radius: 4px;
-    height: 50px;
+    height: 400px;
     color: #ffffff;
     font-size: 30px;
+} */
+.btnTela {
+    border-radius: 6px;
+	color: #fff;
+    text-decoration: none;
+    font-size: 60px;
+	cursor: pointer;
+	display: block;
+	position: relative;
+	border: 2px solid #F7CA18;
+    height: 400px;
+    width: 300;
+	transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+.btnTela {
+	color: #3F3D56 !important;
+	background-color: transparent;
+	text-shadow: none;
 }
 .btnTela:hover{
+    color: #ffffff !important;
+}
+.btnTela:hover:before {
+
+	bottom: 0%;
+	top: auto;
+	height: 100%;
+}
+.btnTela:before {
+	display: block;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	height: 0px;
+	width: 100%;
+	z-index: -1;
+	content: '';
+	color: #000 !important;
+	background: #F7CA18;
+	transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+/* .btnTela:hover{
     background-color: #3F3D56;
     border: 1px solid #3F3D56;
     transition: ease 300ms;
-}
+} */
 
 .container-fluid2{
     padding-top: 800px;
@@ -48,4 +90,13 @@
 
     width: 100%;
     height: 80px;
+}
+
+.footer {
+    margin-top: 100px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-bottom: -20px;
+    background-color: #E6E6E6;
+    color: #3F3D56;
 }

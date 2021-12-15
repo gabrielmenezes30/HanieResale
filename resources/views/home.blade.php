@@ -5,73 +5,65 @@
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
+<link rel="stylesheet" href="{{ asset('css/cssviews/home.scss') }}">
+
     <title>Home</title>
 </head>
 <body>
-    <section class="main">
         @section('content')
-
-
-        {{-- <header>
-            <nav class="navbar navbar-light">
-                <div class="container-fluid">
-                    <a class="navbar-brand text-white" href="#">Hanie Resale</a>
-                    <span class="text-white" >Bem vindo  {{ Auth::user()->name }}</span>
-                  </div>
-            </nav>
-        </header> --}}
-        <div class="container botoes">
-            <div class="d-flex justify-content-evenly mt-5">
-
-                    <a href="{{route('vendas')}}">
-                        <button class="btnTela">Vendas</button>
-                    </a>
-                    <a href="{{route('doacoes')}}">
-                        <button class="btnTela">Doações</button>
-                    </a>
-
+    
+        <div class="alert-message">
+            <div class="row">
+                @if(session('msg'))
+                <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
+                    <span class="msg">{{session('msg')}}</span>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                @endif
+                @yield('content')
             </div>
         </div>
+        
+        <section>
+
+
+
+        <div class="d-flex justify-content-evenly mt-5 p-5">
+            <a href="{{route('vendas')}}" style="text-decoration: none;">
+                <div>
+                    <button class="btnTela">
+                        <img src="{{asset('assets/images/welcome/venda.svg')}}" width="200">
+                      <span style="font-weight: 600">Vendas</span>
+                    </button>
+
+                </div>
+            </a>
+            <a href="{{route('doacoes')}}" style="text-decoration: none;">
+                <button class="btnTela">
+                    <img src="{{asset('assets/images/welcome/doacao.svg')}}" width="200">
+                    <span style="font-weight: 600">Doações</span>
+                </button>
+            </a>
+        </div>
+     
 
     </section>
 
     <section>
-        <div>
-                <div class="row">
-                    @if(session('msg'))
-                    <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
-                        <span class="msg">{{session('msg')}}</span>
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                              <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                          @endif
-                          @yield('content')
-                </div>
-        </div>
-
-
-        
-
-        <div class="d-flex justify-content-center mt-5 p-5">
-            <img src="{{asset('assets/images/svg/gatos-welcome.svg')}}" alt="" width="600px">
-        </div>
-
-
-
-
-        {{-- <header>
-            <nav class="navbar navbar-light">
-                <div class="container-fluid">
-                    <a class="navbar-brand text-white" href="#">Hanie Resale</a>
-                    <span class="text-white" >Bem vindo  {{ Auth::user()->name }}</span>
-                </div>
-            </nav>
-        </header> --}}
-
-
-
+        <footer class="d-flex flex-row align-items-center justify-content-around footer">
+            <div>
+                <h5 class=" fs-1">Hanie Resale</h5>
+            </div>
+            <div>
+                <h3 >Contato</h3>
+                <p >HanieResale@contato.com</p>
+            </div>
+        </footer>
     </section>
+
+    
     @endsection
 </body>
 </html>

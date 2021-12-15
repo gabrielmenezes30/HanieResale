@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Storage;
 
 use Illuminate\Http\Request;
 use App\Doacao;
+use App\User;
 
 class DoacoesController extends Controller
 {
@@ -71,7 +72,9 @@ class DoacoesController extends Controller
 
         $doacoes = Doacao::findOrFail($id);
 
-        return view('show.doacaoshow', ['doacoes' => $doacoes]);
+        $doacoesOwner = User::where('id', $doacoes->user_id)->first()->toArray();
+
+        return view('show.doacaoshow', ['doacoes' => $doacoes, 'doacoesOwner' => $doacoesOwner]);
 
 
 

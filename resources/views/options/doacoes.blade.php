@@ -106,6 +106,10 @@
      <h1>Não temos peças disponiveis</h1>
 @endif
         </section>
+
+
+
+
 </body>
 
 
@@ -123,6 +127,8 @@
     .margin{
         margin-top: 100px;
     }
+
+
 </style>
 {{-- <div id="card-container" class="row">
 @foreach($doacoes as $doacao)

@@ -19,7 +19,7 @@ Route::get('/', function(){
 
 // Criando evento e redirecionando rota Venda;
 
-Route::get('options/doacoes', [DoacoesController::class, 'doacao'])->name('doacoes');
+Route::get('options/doacoes', [DoacoesController::class, 'doacao'])->name('doacoes')->middleware('auth');
 Route::get('create/doacao', [DoacoesController::class, 'createdoacao'])->name('createdoacao')->middleware('auth');
 Route::post('/create/doacao', [DoacoesController::class, 'store']);
 Route::get('/create/doacao/{id}', [DoacoesController::class, 'show']);
@@ -29,7 +29,7 @@ Route::put('/create/doacao/update/{id}', [DoacoesController::class, 'update'])->
 
 
 
-Route::get('options/vendas', [VendaController::class, 'vendas'])->name('vendas');
+Route::get('options/vendas', [VendaController::class, 'vendas'])->name('vendas')->middleware('auth');
 Route::get('create/venda', [VendaController::class, 'createvenda'])->name('createvenda')->middleware('auth');
 Route::post('/create', [VendaController::class, 'store']);
 Route::get('/create/{id}', [VendaController::class, 'show']);
@@ -71,5 +71,5 @@ Route::get('/dashboard', [VendaController::class, 'dashboard'])->name('dashboard
 Route::get('/dashboard/doacao', [DoacoesController::class, 'dashboard'])->name('dashboarddoacao')->middleware('auth');
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 

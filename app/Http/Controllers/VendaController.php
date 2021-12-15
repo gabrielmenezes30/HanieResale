@@ -125,7 +125,6 @@ class VendaController extends Controller
 
     public function show($id){
 
-
         $vendas = Venda::findOrFail($id);
 
         $vendasOwner = User::where('id', $vendas->user_id)->first()->toArray();

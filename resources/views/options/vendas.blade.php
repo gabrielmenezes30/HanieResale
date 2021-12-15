@@ -41,10 +41,7 @@
             <i class="fas fa-user-circle"></i> perfil</a>
           </li>
 
-          <li class="nav-item">
-            <a class="nav-link active fs-5" href="#"><i class="fas fa-shopping-cart"></i>
-             Meus produtos</a>
-          </li>
+         
           <li class="nav-item">
             <a class="nav-link active fs-5 text-success" href="#"><i class="fas fa-plus"></i>
              Anunciar</a>
@@ -61,11 +58,14 @@
     <div class="d-flex flex-row align-items justify-content-center teste">
            <div class="d-flex flex-column">
                <div class="d-flex flex-row align-items justify-content-center" style="margin-top: 100px; font-size: 50px;">
-                   <p class="text-dark">Pesquisa uma peça!</p>
+                   <p class="text-dark">
+                    <i class="fas fa-search"></i>
+                    Pesquisa uma peça!</p>
                </div>
                <form class="d-flex flex-column container-search" action="{{ route('vendas') }}" method="GET">
-                   <input class="form-control me-2 search" type="search" placeholder="Search" aria-label="Search" name="search" id="search">
-                   <button class="btn btn-success mt-4" type="submit">Pesquisar</button>
+                   <input class="form-control me-2 search" type="search" placeholder=" Procurar...." aria-label="Search" name="search" id="search">
+                   <button class="btn btn-success mt-4" type="submit"><i class="fas fa-search"></i>
+                     Pesquisar</button>
                </form>
            </div>
        </div>
@@ -130,7 +130,8 @@
        <div class="card mt-5" style="width: 20rem; height: 31rem;">
            <img src="/storage/produtos/{{ $venda->image }}" class="card-img-top" alt="..." style="width: 20rem; height: 20rem; margin-left:-11px;">
            <a class="p-1 btn btn-outline-primary mt-3" href="/create/{{ $venda->id }}">
-                   Conferir
+            <i class="fas fa-eye"></i>
+                Conferir
             </a>
 
            <div class="card-body">
@@ -159,6 +160,7 @@
         </section>
 
 
+        
 
 </body>
 
