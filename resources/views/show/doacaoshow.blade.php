@@ -26,6 +26,11 @@
             </h1>
 
             <h1>
+                <i class="fas fa-align-justify"></i>
+                Contato: {{ $doacoes->tel }}
+            </h1>
+
+            <h1>
                 <i class="fas fa-file-alt"></i>
                 Descrição: {{$doacoes->description}}
             </h1>
@@ -62,9 +67,6 @@
             <p >HanieResale@contato.com</p>
         </div>
     </footer>
-    <div class="text-center pt-2 pb-2" style="background-color:#E6E6E6;">
-        <p >Direitos reservados© </p>
-    </div>
 </section>
 
 @endsection
@@ -87,8 +89,13 @@
     }
     .footer {
     margin-top: 100px;
+    margin-bottom: -40px;
     padding-top: 30px;
+    padding-bottom: 20px; 
     background-color: #E6E6E6;
     color: #3F3D56;
+}
+.fs-1{
+    font-size: 50px;
 }
 </style>

@@ -32,6 +32,10 @@
                 Descrição: {{$vendas->description}}
             </h1>
             <h1>
+                <i class="fas fa-file-alt"></i>
+                Contato: {{$vendas->tel}}
+            </h1>
+            <h1>
 
                 @if($vendas->gender == 0)
                 {{-- <i class="fas fa-file-alt"></i> --}}

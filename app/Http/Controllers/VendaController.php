@@ -42,6 +42,7 @@ class VendaController extends Controller
         $vendas->description = $request->description;
         $vendas->price = $request->price;
         $vendas->gender = $request->gender;
+        $vendas->tel = $request->tel;
 
         //Upload de imagens
 
@@ -99,7 +100,6 @@ class VendaController extends Controller
         $data = $request->all();
 
         if($request->hasFile('image') && $request->file('image')->isValid()){
-
 
 
             $requestImage = $request->image;

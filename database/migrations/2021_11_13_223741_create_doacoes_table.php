@@ -19,6 +19,7 @@ class CreateDoacoesTable extends Migration
             $table->text('description');
             $table->string('city');
             $table->boolean('gender');
+            $table->bigInteger('tel');
             $table->string('image');
             $table->integer('user_id')->unsigned();
             $table->timestamps();

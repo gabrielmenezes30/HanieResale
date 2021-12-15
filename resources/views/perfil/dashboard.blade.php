@@ -90,12 +90,13 @@
 
             <h1 class="mt-5 text-center">Minhas peças para venda</h1>
             @if(count($vendas) > 0)
-            <table class="table">
+            <table class="table table-dark table-striped">
                 <thead>
                     <tr>
                         <th scope="col">Venda</th>
                         <th scope="col">Peças</th>
                         <th scope="col">Ações</th>
+                        <th scope="col">Preview</th>
 
                     </tr>
                 </thead>
@@ -107,7 +108,8 @@
                         <td><a href="/create/{{ $venda->id }}" class="text-info"> {{ $venda->title }}</a></td>
 
                         <td>
-                            <a href="/create/edit/{{ $venda->id }}" class="btn btn-success edit-btn"><i class="fas fa-edit"></i> Editar</a>
+                            <a href="/create/edit/{{ $venda->id }}" class="btn btn-success edit-btn">
+                                <i class="fas fa-edit"></i> Editar</a>
 
                            <form action="/create/{{ $venda->id }}" method="POST">
                             @csrf
@@ -115,6 +117,10 @@
                             <button type="submit" class="btn btn-danger delete-btn">
                                 <i class="fas fa-trash-alt"></i> Deletar</button>
                             </form>
+                        </td>
+                            <td>
+                                <img src=" /storage/produtos/{{ $venda->image }}" alt="" width="100">
+                            </td>
                     </tr>
 
                     @endforeach

@@ -43,6 +43,7 @@ class DoacoesController extends Controller
         $doacoes->city = $request->city;
         $doacoes->description = $request->description;
         $doacoes->gender = $request->gender;
+        $doacoes->tel = $request->tel;
 
         if($request->hasFile('image') && $request->file('image')->isValid()){
 
@@ -133,7 +134,7 @@ class DoacoesController extends Controller
 
         Doacao::findOrFail($request->id)->update($data);
 
-        return redirect('/home')->with('msg', 'Editado com sucesso!');
+        return redirect('/dashboard/doacao')->with('msg', 'Editado com sucesso!');
     }
 
 }

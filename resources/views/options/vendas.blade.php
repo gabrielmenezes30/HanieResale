@@ -38,7 +38,7 @@
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li class="nav-item">
             <a class="nav-link active text-uppercase fs-4" aria-current="page" href="{{ route('dashboard') }}">
-            <i class="fas fa-user-circle"></i> perfil</a>
+            <i class="fas fa-user-circle"></i> Meus Produtos</a>
           </li>
 
          
@@ -78,51 +78,7 @@
 
 
 
-{{-- <section class="">
 
-    @foreach($vendas as $vendas)
-    <div id="card-container " class="row">
-   <div class="card" style="width: 25rem; height: 32rem;">
-       <img src="{{asset('assets/images/roupa.jpg')}}" class="card-img-top" alt="..." style="width: 24rem; height: 22rem; margin-left:-5px; padding: 10px;">
-       <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-        Conferir
-      </button>
-
-      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="staticBackdropLabel">{{$vendas->title}}</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-
-            <div class="modal-body">
-                <h3>Descrição:</h3>
-                {{ $vendas->description}}
-                <br><br>
-                    <h3>Localização</h3>
-                    {{ $vendas->city}}
-                    <br><br>
-                    <h5>Preço:</h5>
-                    <p>R${{$vendas->price}}</p>
-
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Chat</button>
-            </div>
-          </div>
-        </div>
-      </div>
-       <div class="card-body">
-         <h5 class="card-title">{{$vendas->title}}</h5>
-         <p class="card-text"> {{$vendas->description}}</p>
-         <h6 class="text-danger">{{$vendas->city}}</p>
-       </div>
-     </div>
-
-   @endforeach
-   </div> --}}
    <section class="">
 
     <div id="card-container" class="row">

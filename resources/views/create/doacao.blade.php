@@ -17,6 +17,10 @@
                         <input required type="text" class="form-control" id="title" name="title" placeholder="Ex: T-shirt....Calça....">
                     </div>
                     <div class="form-group">
+                        <label for="title">Contato</label>
+                        <input required type="text" class="form-control" id="tel" name="tel" placeholder="87 9999999">
+                    </div>
+                    <div class="form-group">
                         <label for="city">Cidade</label>
                         <input required class="form-control" name="city" id="city" placeholder="Ex: Petrolina....">
                     </div>

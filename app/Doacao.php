@@ -11,7 +11,7 @@ class Doacao extends Model
     protected $table = "doacoes";
 
     protected $fillable = [
-        'title', 'description', 'city', 'image', 'gender',
+        'title', 'description', 'city', 'image', 'gender', 'tel,',
     ];
 
     public function user(){

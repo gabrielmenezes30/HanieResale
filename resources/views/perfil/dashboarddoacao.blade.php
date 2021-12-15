@@ -9,6 +9,21 @@
    <!-- <p>{{ Auth::user()->name }} </p>
    <p>{{ Auth::user()->email }}</p> -->
 
+   <div class="mensagem-de-alerta">
+
+    @if(session('msg'))
+        <div class="alert alert-success" role="alert">
+            <h4 class="alert-heading">Opa</h4>
+            <span class="msg">{{session('msg')}}</span>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            <hr>
+          </div>
+    
+              @endif
+</div>
+
 
    <main class="container-fluid content">
        <p class="text"><i class="fas fa-user-circle"></i> Informações pessoais</p>
@@ -28,11 +43,13 @@
            <div class="d-flex flex-column">
             <a href="{{ route('vendas') }}">
                 <button class="btn1 ">
+                    <i class="fas fa-bell"></i>
                     Vendas
                 </button>
             </a>
             <a href="{{ route('doacoes') }}">
                 <button class="btn2 ">
+                    <i class="fas fa-adjust"></i>
                     Doações
                 </button>
             </a>
@@ -42,30 +59,39 @@
        <div class="dashboard-container">
             <h1 class="mt-5 text-center">Minhas peças para Doacao</h1>
             @if(count($doacoes) > 0)
-            <table class="table">
+            <table class="table table-dark table-striped ">
                 <thead>
                     <tr>
                         <th scope="col">Venda</th>
-                        <th scope="col">Peças</th>
+                        <th scope="col">Titulo</th>
                         <th scope="col">Ações</th>
+                        <th scope="col">Preview</th>
 
                     </tr>
                 </thead>
                 <tbody class="">
                     @foreach($doacoes as $doacao)
-
+                    
                     <tr>
                         <td scropt="row">{{ $loop->index +1 }}</td>
                         <td><a href="/create/doacao/{{ $doacao->id }}" class="text-success">{{ $doacao->title }}</a></td>
 
                         <td>
-                            <a href="/create/doacao/edit/{{ $doacao->id }}" class="btn btn-success edit-btn" >Editar</a>
+                            <a href="/create/doacao/edit/{{ $doacao->id }}" class="btn btn-success edit-btn" >
+                                <i class="fas fa-edit"></i>
+                                Editar</a>
 
                            <form action="/create/doacao/{{ $doacao->id }}" method="POST" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             @csrf
                             @method('DELETE')
-                            <button  type="submit" class="btn btn-danger delete-btn">Deletar</button>
+                            <button  type="submit" class="btn btn-danger delete-btn">
+                                <i class="fas fa-trash-alt"></i>
+                                Deletar</button>
                             </form>
+                        </td>
+                        <td>
+                            <img src=" /storage/produtos/{{ $doacao->image }}" alt="" width="100">
+                        </td>
                     </tr>
 
                 
